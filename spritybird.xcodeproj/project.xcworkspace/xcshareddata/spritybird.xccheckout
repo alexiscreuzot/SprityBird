@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>620B3EA4-438C-474E-95A7-9DF4759CD1F5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>spritybird</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>186ED877-7BED-46B3-AF9A-BDAB3ACA9C4E</key>
+		<string>ssh://bitbucket.org/kirualex/flappingbirds.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>spritybird.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>186ED877-7BED-46B3-AF9A-BDAB3ACA9C4E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/kirualex/flappingbirds.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>186ED877-7BED-46B3-AF9A-BDAB3ACA9C4E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>186ED877-7BED-46B3-AF9A-BDAB3ACA9C4E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>spritybird</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		821A755618AD616C00B376D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0A218A6F53400FEBE9B /* AppDelegate.m */; };
+		821A755718AD617800B376D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0A818A6F53400FEBE9B /* ViewController.m */; };
+		821A755818AD617800B376D5 /* BouncingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0C818A6FF4200FEBE9B /* BouncingScene.m */; };
+		821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */; };
+		821A755A18AD617800B376D5 /* PipeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8274FC1918A7B42A00FEBCE7 /* PipeNode.m */; };
+		821A755B18AD617800B376D5 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */; };
+		821A755C18AD617800B376D5 /* UIView+utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0DE18A79B1900FEBE9B /* UIView+utilities.m */; };
+		821A755D18AD617800B376D5 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 8274FC2918A7E13200FEBCE7 /* Math.m */; };
+		821A755E18AD618A00B376D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0A418A6F53400FEBE9B /* Main.storyboard */; };
+		821A755F18AD618A00B376D5 /* pipeTube@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8274FC1F18A7BF3000FEBCE7 /* pipeTube@2x.png */; };
+		821A756018AD618A00B376D5 /* pipeTubeCapTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8274FC2618A7C13800FEBCE7 /* pipeTubeCapTop@2x.png */; };
+		821A756118AD618A00B376D5 /* floor2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8274FC2F18A7EF6700FEBCE7 /* floor2@2x.png */; };
+		821A756218AD618A00B376D5 /* pipeTubeCapBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8274FC2418A7C03500FEBCE7 /* pipeTubeCapBottom.png */; };
+		821A756318AD618A00B376D5 /* clouds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0EB18A7A0E600FEBE9B /* clouds@2x.png */; };
+		821A756418AD618A00B376D5 /* city@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0ED18A7A13700FEBE9B /* city@2x.png */; };
+		821A756518AD618A00B376D5 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0CC18A7055300FEBE9B /* back@2x.png */; };
+		821A756618AD618A00B376D5 /* bird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0D018A748DA00FEBE9B /* bird@2x.png */; };
+		821A756718AD618A00B376D5 /* floor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0CE18A7090800FEBE9B /* floor@2x.png */; };
+		821A756818AD618A00B376D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0AA18A6F53400FEBE9B /* Images.xcassets */; };
+		821A756918AD618A00B376D5 /* spritybird-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A09A18A6F53400FEBE9B /* spritybird-Info.plist */; };
+		821A756A18AD61B100B376D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A09E18A6F53400FEBE9B /* main.m */; };
+		82C6A09318A6F53400FEBE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09218A6F53400FEBE9B /* Foundation.framework */; };
+		82C6A09518A6F53400FEBE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09418A6F53400FEBE9B /* CoreGraphics.framework */; };
+		82C6A09718A6F53400FEBE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09618A6F53400FEBE9B /* UIKit.framework */; };
+		82C6A0B218A6F53400FEBE9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A0B118A6F53400FEBE9B /* XCTest.framework */; };
+		82C6A0B318A6F53400FEBE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09218A6F53400FEBE9B /* Foundation.framework */; };
+		82C6A0B418A6F53400FEBE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09618A6F53400FEBE9B /* UIKit.framework */; };
+		82C6A0BC18A6F53400FEBE9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0BA18A6F53400FEBE9B /* InfoPlist.strings */; };
+		82C6A0BE18A6F53400FEBE9B /* spritybirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0BD18A6F53400FEBE9B /* spritybirdTests.m */; };
+		82C6A0CB18A6FF7400FEBE9B /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A0CA18A6FF7400FEBE9B /* SpriteKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82C6A0B518A6F53400FEBE9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82C6A08718A6F53400FEBE9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82C6A08E18A6F53400FEBE9B;
+			remoteInfo = spritybird;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8274FC1818A7B42A00FEBCE7 /* PipeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PipeNode.h; sourceTree = "<group>"; };
+		8274FC1918A7B42A00FEBCE7 /* PipeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipeNode.m; sourceTree = "<group>"; };
+		8274FC1F18A7BF3000FEBCE7 /* pipeTube@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pipeTube@2x.png"; sourceTree = "<group>"; };
+		8274FC2418A7C03500FEBCE7 /* pipeTubeCapBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipeTubeCapBottom.png; sourceTree = "<group>"; };
+		8274FC2618A7C13800FEBCE7 /* pipeTubeCapTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pipeTubeCapTop@2x.png"; sourceTree = "<group>"; };
+		8274FC2818A7E13200FEBCE7 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
+		8274FC2918A7E13200FEBCE7 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Math.m; sourceTree = "<group>"; };
+		8274FC2F18A7EF6700FEBCE7 /* floor2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor2@2x.png"; sourceTree = "<group>"; };
+		82C6A08F18A6F53400FEBE9B /* spritybird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spritybird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C6A09218A6F53400FEBE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		82C6A09418A6F53400FEBE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		82C6A09618A6F53400FEBE9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		82C6A09A18A6F53400FEBE9B /* spritybird-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spritybird-Info.plist"; sourceTree = "<group>"; };
+		82C6A09C18A6F53400FEBE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82C6A09E18A6F53400FEBE9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82C6A0A018A6F53400FEBE9B /* spritybird-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spritybird-Prefix.pch"; sourceTree = "<group>"; };
+		82C6A0A118A6F53400FEBE9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		82C6A0A218A6F53400FEBE9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		82C6A0A518A6F53400FEBE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		82C6A0A718A6F53400FEBE9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		82C6A0A818A6F53400FEBE9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		82C6A0AA18A6F53400FEBE9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		82C6A0B018A6F53400FEBE9B /* spritybirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spritybirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C6A0B118A6F53400FEBE9B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		82C6A0B918A6F53400FEBE9B /* spritybirdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spritybirdTests-Info.plist"; sourceTree = "<group>"; };
+		82C6A0BB18A6F53400FEBE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82C6A0BD18A6F53400FEBE9B /* spritybirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spritybirdTests.m; sourceTree = "<group>"; };
+		82C6A0C718A6FF4200FEBE9B /* BouncingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncingScene.h; sourceTree = "<group>"; };
+		82C6A0C818A6FF4200FEBE9B /* BouncingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncingScene.m; sourceTree = "<group>"; };
+		82C6A0CA18A6FF7400FEBE9B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		82C6A0CC18A7055300FEBE9B /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		82C6A0CE18A7090800FEBE9B /* floor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor@2x.png"; sourceTree = "<group>"; };
+		82C6A0D018A748DA00FEBE9B /* bird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird@2x.png"; sourceTree = "<group>"; };
+		82C6A0DA18A7918800FEBE9B /* SKScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKScrollingNode.h; sourceTree = "<group>"; };
+		82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKScrollingNode.m; sourceTree = "<group>"; };
+		82C6A0DD18A79B1900FEBE9B /* UIView+utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+utilities.h"; sourceTree = "<group>"; };
+		82C6A0DE18A79B1900FEBE9B /* UIView+utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+utilities.m"; sourceTree = "<group>"; };
+		82C6A0E018A79B2400FEBE9B /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		82C6A0E118A79B2400FEBE9B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		82C6A0E218A79C3C00FEBE9B /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		82C6A0EB18A7A0E600FEBE9B /* clouds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clouds@2x.png"; sourceTree = "<group>"; };
+		82C6A0ED18A7A13700FEBE9B /* city@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "city@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82C6A08C18A6F53400FEBE9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C6A0CB18A6FF7400FEBE9B /* SpriteKit.framework in Frameworks */,
+				82C6A09518A6F53400FEBE9B /* CoreGraphics.framework in Frameworks */,
+				82C6A09718A6F53400FEBE9B /* UIKit.framework in Frameworks */,
+				82C6A09318A6F53400FEBE9B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82C6A0AD18A6F53400FEBE9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C6A0B218A6F53400FEBE9B /* XCTest.framework in Frameworks */,
+				82C6A0B418A6F53400FEBE9B /* UIKit.framework in Frameworks */,
+				82C6A0B318A6F53400FEBE9B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8274FC3318A7F14000FEBCE7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8274FC1F18A7BF3000FEBCE7 /* pipeTube@2x.png */,
+				8274FC2618A7C13800FEBCE7 /* pipeTubeCapTop@2x.png */,
+				8274FC2F18A7EF6700FEBCE7 /* floor2@2x.png */,
+				8274FC2418A7C03500FEBCE7 /* pipeTubeCapBottom.png */,
+				82C6A0EB18A7A0E600FEBE9B /* clouds@2x.png */,
+				82C6A0ED18A7A13700FEBE9B /* city@2x.png */,
+				82C6A0CC18A7055300FEBE9B /* back@2x.png */,
+				82C6A0D018A748DA00FEBE9B /* bird@2x.png */,
+				82C6A0CE18A7090800FEBE9B /* floor@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		82C6A08618A6F53400FEBE9B = {
+			isa = PBXGroup;
+			children = (
+				82C6A09818A6F53400FEBE9B /* spritybird */,
+				82C6A0B718A6F53400FEBE9B /* spritybird Tests */,
+				82C6A09118A6F53400FEBE9B /* Frameworks */,
+				82C6A09018A6F53400FEBE9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82C6A09018A6F53400FEBE9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A08F18A6F53400FEBE9B /* spritybird.app */,
+				82C6A0B018A6F53400FEBE9B /* spritybirdTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82C6A09118A6F53400FEBE9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0CA18A6FF7400FEBE9B /* SpriteKit.framework */,
+				82C6A09218A6F53400FEBE9B /* Foundation.framework */,
+				82C6A09418A6F53400FEBE9B /* CoreGraphics.framework */,
+				82C6A09618A6F53400FEBE9B /* UIKit.framework */,
+				82C6A0B118A6F53400FEBE9B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82C6A09818A6F53400FEBE9B /* spritybird */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0D218A790BA00FEBE9B /* Classes */,
+				82C6A0D918A7913200FEBE9B /* Resources */,
+				82C6A09918A6F53400FEBE9B /* Supporting Files */,
+			);
+			path = spritybird;
+			sourceTree = "<group>";
+		};
+		82C6A09918A6F53400FEBE9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A09A18A6F53400FEBE9B /* spritybird-Info.plist */,
+				82C6A09B18A6F53400FEBE9B /* InfoPlist.strings */,
+				82C6A09E18A6F53400FEBE9B /* main.m */,
+				82C6A0A018A6F53400FEBE9B /* spritybird-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82C6A0B718A6F53400FEBE9B /* spritybird Tests */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0BD18A6F53400FEBE9B /* spritybirdTests.m */,
+				82C6A0B818A6F53400FEBE9B /* Supporting Files */,
+			);
+			name = "spritybird Tests";
+			path = spritybirdTests;
+			sourceTree = "<group>";
+		};
+		82C6A0B818A6F53400FEBE9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0B918A6F53400FEBE9B /* spritybirdTests-Info.plist */,
+				82C6A0BA18A6F53400FEBE9B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82C6A0D218A790BA00FEBE9B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0A118A6F53400FEBE9B /* AppDelegate.h */,
+				82C6A0A218A6F53400FEBE9B /* AppDelegate.m */,
+				82C6A0E018A79B2400FEBE9B /* Macros.h */,
+				82C6A0E118A79B2400FEBE9B /* Constants.h */,
+				82C6A0D318A790C000FEBE9B /* Controllers */,
+				82C6A0D418A790C800FEBE9B /* Scene */,
+				82C6A0D718A790FE00FEBE9B /* Helpers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		82C6A0D318A790C000FEBE9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0A718A6F53400FEBE9B /* ViewController.h */,
+				82C6A0A818A6F53400FEBE9B /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		82C6A0D418A790C800FEBE9B /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0C718A6FF4200FEBE9B /* BouncingScene.h */,
+				82C6A0C818A6FF4200FEBE9B /* BouncingScene.m */,
+				82C6A0D518A790E100FEBE9B /* Nodes */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		82C6A0D518A790E100FEBE9B /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0DA18A7918800FEBE9B /* SKScrollingNode.h */,
+				82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */,
+				8274FC1818A7B42A00FEBCE7 /* PipeNode.h */,
+				8274FC1918A7B42A00FEBCE7 /* PipeNode.m */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		82C6A0D718A790FE00FEBE9B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0E218A79C3C00FEBE9B /* UIColor+FlatUI.h */,
+				82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */,
+				82C6A0DD18A79B1900FEBE9B /* UIView+utilities.h */,
+				82C6A0DE18A79B1900FEBE9B /* UIView+utilities.m */,
+				8274FC2818A7E13200FEBCE7 /* Math.h */,
+				8274FC2918A7E13200FEBCE7 /* Math.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		82C6A0D918A7913200FEBE9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				82C6A0A418A6F53400FEBE9B /* Main.storyboard */,
+				8274FC3318A7F14000FEBCE7 /* Images */,
+				82C6A0AA18A6F53400FEBE9B /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82C6A08E18A6F53400FEBE9B /* spritybird */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82C6A0C118A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybird" */;
+			buildPhases = (
+				82C6A08B18A6F53400FEBE9B /* Sources */,
+				82C6A08C18A6F53400FEBE9B /* Frameworks */,
+				82C6A08D18A6F53400FEBE9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = spritybird;
+			productName = spritybird;
+			productReference = 82C6A08F18A6F53400FEBE9B /* spritybird.app */;
+			productType = "com.apple.product-type.application";
+		};
+		82C6A0AF18A6F53400FEBE9B /* spritybirdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82C6A0C418A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybirdTests" */;
+			buildPhases = (
+				82C6A0AC18A6F53400FEBE9B /* Sources */,
+				82C6A0AD18A6F53400FEBE9B /* Frameworks */,
+				82C6A0AE18A6F53400FEBE9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82C6A0B618A6F53400FEBE9B /* PBXTargetDependency */,
+			);
+			name = spritybirdTests;
+			productName = spritybirdTests;
+			productReference = 82C6A0B018A6F53400FEBE9B /* spritybirdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82C6A08718A6F53400FEBE9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Alexis Creuzot";
+				TargetAttributes = {
+					82C6A0AF18A6F53400FEBE9B = {
+						TestTargetID = 82C6A08E18A6F53400FEBE9B;
+					};
+				};
+			};
+			buildConfigurationList = 82C6A08A18A6F53400FEBE9B /* Build configuration list for PBXProject "spritybird" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 82C6A08618A6F53400FEBE9B;
+			productRefGroup = 82C6A09018A6F53400FEBE9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82C6A08E18A6F53400FEBE9B /* spritybird */,
+				82C6A0AF18A6F53400FEBE9B /* spritybirdTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82C6A08D18A6F53400FEBE9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				821A755E18AD618A00B376D5 /* Main.storyboard in Resources */,
+				821A755F18AD618A00B376D5 /* pipeTube@2x.png in Resources */,
+				821A756018AD618A00B376D5 /* pipeTubeCapTop@2x.png in Resources */,
+				821A756118AD618A00B376D5 /* floor2@2x.png in Resources */,
+				821A756218AD618A00B376D5 /* pipeTubeCapBottom.png in Resources */,
+				821A756318AD618A00B376D5 /* clouds@2x.png in Resources */,
+				821A756418AD618A00B376D5 /* city@2x.png in Resources */,
+				821A756518AD618A00B376D5 /* back@2x.png in Resources */,
+				821A756618AD618A00B376D5 /* bird@2x.png in Resources */,
+				821A756718AD618A00B376D5 /* floor@2x.png in Resources */,
+				821A756818AD618A00B376D5 /* Images.xcassets in Resources */,
+				821A756918AD618A00B376D5 /* spritybird-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82C6A0AE18A6F53400FEBE9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C6A0BC18A6F53400FEBE9B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82C6A08B18A6F53400FEBE9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				821A756A18AD61B100B376D5 /* main.m in Sources */,
+				821A755718AD617800B376D5 /* ViewController.m in Sources */,
+				821A755818AD617800B376D5 /* BouncingScene.m in Sources */,
+				821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */,
+				821A755A18AD617800B376D5 /* PipeNode.m in Sources */,
+				821A755B18AD617800B376D5 /* UIColor+FlatUI.m in Sources */,
+				821A755C18AD617800B376D5 /* UIView+utilities.m in Sources */,
+				821A755D18AD617800B376D5 /* Math.m in Sources */,
+				821A755618AD616C00B376D5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82C6A0AC18A6F53400FEBE9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82C6A0BE18A6F53400FEBE9B /* spritybirdTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82C6A0B618A6F53400FEBE9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82C6A08E18A6F53400FEBE9B /* spritybird */;
+			targetProxy = 82C6A0B518A6F53400FEBE9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		82C6A09B18A6F53400FEBE9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82C6A09C18A6F53400FEBE9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		82C6A0A418A6F53400FEBE9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82C6A0A518A6F53400FEBE9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		82C6A0BA18A6F53400FEBE9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82C6A0BB18A6F53400FEBE9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82C6A0BF18A6F53400FEBE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		82C6A0C018A6F53400FEBE9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82C6A0C218A6F53400FEBE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
+				INFOPLIST_FILE = "spritybird/spritybird-Info.plist";
+				PRODUCT_NAME = spritybird;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		82C6A0C318A6F53400FEBE9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
+				INFOPLIST_FILE = "spritybird/spritybird-Info.plist";
+				PRODUCT_NAME = spritybird;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		82C6A0C518A6F53400FEBE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spritybird.app/spritybird";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "spritybirdTests/spritybirdTests-Info.plist";
+				PRODUCT_NAME = spritybirdTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		82C6A0C618A6F53400FEBE9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spritybird.app/spritybird";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
+				INFOPLIST_FILE = "spritybirdTests/spritybirdTests-Info.plist";
+				PRODUCT_NAME = spritybirdTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82C6A08A18A6F53400FEBE9B /* Build configuration list for PBXProject "spritybird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82C6A0BF18A6F53400FEBE9B /* Debug */,
+				82C6A0C018A6F53400FEBE9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82C6A0C118A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82C6A0C218A6F53400FEBE9B /* Debug */,
+				82C6A0C318A6F53400FEBE9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82C6A0C418A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybirdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82C6A0C518A6F53400FEBE9B /* Debug */,
+				82C6A0C618A6F53400FEBE9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82C6A08718A6F53400FEBE9B /* Project object */;
+}
