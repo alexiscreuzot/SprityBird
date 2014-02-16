@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		821A755618AD616C00B376D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0A218A6F53400FEBE9B /* AppDelegate.m */; };
 		821A755718AD617800B376D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0A818A6F53400FEBE9B /* ViewController.m */; };
-		821A755818AD617800B376D5 /* BouncingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0C818A6FF4200FEBE9B /* BouncingScene.m */; };
+		821A755818AD617800B376D5 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0C818A6FF4200FEBE9B /* Scene.m */; };
 		821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */; };
 		821A755A18AD617800B376D5 /* PipeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8274FC1918A7B42A00FEBCE7 /* PipeNode.m */; };
 		821A755B18AD617800B376D5 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */; };
@@ -28,6 +28,8 @@
 		821A756818AD618A00B376D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0AA18A6F53400FEBE9B /* Images.xcassets */; };
 		821A756918AD618A00B376D5 /* spritybird-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A09A18A6F53400FEBE9B /* spritybird-Info.plist */; };
 		821A756A18AD61B100B376D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A09E18A6F53400FEBE9B /* main.m */; };
+		82B99B4218B1301F0099A4FE /* BirdNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B99B4118B1301F0099A4FE /* BirdNode.m */; };
+		82B99B4618B132B40099A4FE /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B99B4518B132B40099A4FE /* Score.m */; };
 		82C6A09318A6F53400FEBE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09218A6F53400FEBE9B /* Foundation.framework */; };
 		82C6A09518A6F53400FEBE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09418A6F53400FEBE9B /* CoreGraphics.framework */; };
 		82C6A09718A6F53400FEBE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6A09618A6F53400FEBE9B /* UIKit.framework */; };
@@ -58,6 +60,10 @@
 		8274FC2818A7E13200FEBCE7 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
 		8274FC2918A7E13200FEBCE7 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Math.m; sourceTree = "<group>"; };
 		8274FC2F18A7EF6700FEBCE7 /* floor2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor2@2x.png"; sourceTree = "<group>"; };
+		82B99B4018B1301F0099A4FE /* BirdNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdNode.h; sourceTree = "<group>"; };
+		82B99B4118B1301F0099A4FE /* BirdNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirdNode.m; sourceTree = "<group>"; };
+		82B99B4418B132B40099A4FE /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		82B99B4518B132B40099A4FE /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		82C6A08F18A6F53400FEBE9B /* spritybird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spritybird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C6A09218A6F53400FEBE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82C6A09418A6F53400FEBE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,8 +83,8 @@
 		82C6A0B918A6F53400FEBE9B /* spritybirdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spritybirdTests-Info.plist"; sourceTree = "<group>"; };
 		82C6A0BB18A6F53400FEBE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82C6A0BD18A6F53400FEBE9B /* spritybirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spritybirdTests.m; sourceTree = "<group>"; };
-		82C6A0C718A6FF4200FEBE9B /* BouncingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BouncingScene.h; sourceTree = "<group>"; };
-		82C6A0C818A6FF4200FEBE9B /* BouncingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncingScene.m; sourceTree = "<group>"; };
+		82C6A0C718A6FF4200FEBE9B /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		82C6A0C818A6FF4200FEBE9B /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
 		82C6A0CA18A6FF7400FEBE9B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		82C6A0CC18A7055300FEBE9B /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		82C6A0CE18A7090800FEBE9B /* floor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor@2x.png"; sourceTree = "<group>"; };
@@ -134,6 +140,15 @@
 				82C6A0CE18A7090800FEBE9B /* floor@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		82B99B4318B1329F0099A4FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82B99B4418B132B40099A4FE /* Score.h */,
+				82B99B4518B132B40099A4FE /* Score.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		82C6A08618A6F53400FEBE9B = {
@@ -214,6 +229,7 @@
 				82C6A0A218A6F53400FEBE9B /* AppDelegate.m */,
 				82C6A0E018A79B2400FEBE9B /* Macros.h */,
 				82C6A0E118A79B2400FEBE9B /* Constants.h */,
+				82B99B4318B1329F0099A4FE /* Model */,
 				82C6A0D318A790C000FEBE9B /* Controllers */,
 				82C6A0D418A790C800FEBE9B /* Scene */,
 				82C6A0D718A790FE00FEBE9B /* Helpers */,
@@ -233,8 +249,8 @@
 		82C6A0D418A790C800FEBE9B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				82C6A0C718A6FF4200FEBE9B /* BouncingScene.h */,
-				82C6A0C818A6FF4200FEBE9B /* BouncingScene.m */,
+				82C6A0C718A6FF4200FEBE9B /* Scene.h */,
+				82C6A0C818A6FF4200FEBE9B /* Scene.m */,
 				82C6A0D518A790E100FEBE9B /* Nodes */,
 			);
 			name = Scene;
@@ -247,6 +263,8 @@
 				82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */,
 				8274FC1818A7B42A00FEBCE7 /* PipeNode.h */,
 				8274FC1918A7B42A00FEBCE7 /* PipeNode.m */,
+				82B99B4018B1301F0099A4FE /* BirdNode.h */,
+				82B99B4118B1301F0099A4FE /* BirdNode.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -382,10 +400,12 @@
 			files = (
 				821A756A18AD61B100B376D5 /* main.m in Sources */,
 				821A755718AD617800B376D5 /* ViewController.m in Sources */,
-				821A755818AD617800B376D5 /* BouncingScene.m in Sources */,
+				821A755818AD617800B376D5 /* Scene.m in Sources */,
 				821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */,
+				82B99B4618B132B40099A4FE /* Score.m in Sources */,
 				821A755A18AD617800B376D5 /* PipeNode.m in Sources */,
 				821A755B18AD617800B376D5 /* UIColor+FlatUI.m in Sources */,
+				82B99B4218B1301F0099A4FE /* BirdNode.m in Sources */,
 				821A755C18AD617800B376D5 /* UIView+utilities.m in Sources */,
 				821A755D18AD617800B376D5 /* Math.m in Sources */,
 				821A755618AD616C00B376D5 /* AppDelegate.m in Sources */,

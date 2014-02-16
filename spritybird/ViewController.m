@@ -7,15 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "BouncingScene.h"
+#import "Scene.h"
+#import "Score.h"
 
 @interface ViewController ()
 @property (weak,nonatomic) IBOutlet SKView * gameView;
+@property (weak,nonatomic) IBOutlet UILabel * bestScoreLabel;
 @end
 
 @implementation ViewController
 {
-    BouncingScene * scene;
+    Scene * scene;
 }
 
 - (void)viewDidLoad
@@ -27,14 +29,13 @@
     self.gameView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    scene = [BouncingScene sceneWithSize:self.gameView.bounds.size];
+    scene = [Scene sceneWithSize:self.gameView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     scene.delegate = self;
     
     // Present the scene.
     [self.gameView presentScene:scene];
-    
-    
+    self.bestScoreLabel.text = F(@"Best : %lu",[Score bestScore]);
 }
 
 
@@ -42,7 +43,7 @@
 
 - (void)eventStart
 {
-
+    
 }
 
 - (void)eventPlay
@@ -61,7 +62,7 @@
     } completion:^(BOOL finished) {
         [flash removeFromSuperview];
     }];
-    
+    self.bestScoreLabel.text = F(@"Best : %lu",[Score bestScore]);
 }
 
 

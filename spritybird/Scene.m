@@ -8,10 +8,13 @@
 
 
 
-#import "BouncingScene.h"
+#import "Scene.h"
 
 #import "SKScrollingNode.h"
+
+#import "BirdNode.h"
 #import "PipeNode.h"
+#import "Score.h"
 
 #define FIRST_BLOCK_PADDING 100
 
@@ -22,15 +25,12 @@
 #define BLOCK_MIN_HEIGHT 40
 #define BLOCK_INTERVAL_SPACE 140
 
-static const uint32_t birdBitMask     =  0x1 << 0;
-static const uint32_t floorBitMask    =  0x1 << 1;
-static const uint32_t blockBitMask    =  0x1 << 2;
 
-@implementation BouncingScene{
+@implementation Scene{
     SKScrollingNode * floor;
     SKScrollingNode * city;
     SKScrollingNode * clouds;
-    SKSpriteNode * bird;
+    BirdNode * bird;
     
     int nbObstacles;
     NSMutableArray * topPipes;
@@ -39,7 +39,6 @@ static const uint32_t blockBitMask    =  0x1 << 2;
     int score;
     SKLabelNode * scoreLabel;
     
-    SKEmitterNode *particlesNode;
     bool wasted;
 }
 
@@ -125,10 +124,9 @@ static const uint32_t blockBitMask    =  0x1 << 2;
 }
 
 - (void)createBird{
-    bird = [SKSpriteNode spriteNodeWithImageNamed:@"bird"];
+    bird = [BirdNode spriteNodeWithImageNamed:@"bird"];
     [bird setPosition:CGPointMake(120, CGRectGetMidY(self.frame))];
     [bird setName:@"bird"];
-    
     [self addChild:bird];
 }
 
@@ -205,14 +203,10 @@ static const uint32_t blockBitMask    =  0x1 << 2;
             [self.delegate eventPlay];
         }
         
-        [bird setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(34, 20)]];
-        bird.physicsBody.restitution = 0.01;
-        bird.physicsBody.mass = 0.1;
+        [bird startPlaying];
     }
     
-    bird.physicsBody.categoryBitMask = birdBitMask;
-    [bird.physicsBody setVelocity:CGVectorMake(0, 0)];
-    [bird.physicsBody applyImpulse:CGVectorMake(0, 40)];
+    [bird bounce];
 }
 
 #pragma mark - Update
@@ -231,18 +225,9 @@ static const uint32_t blockBitMask    =  0x1 << 2;
     [clouds update:currentTime];
     
     // Other
-    [self updateBird:currentTime];
+    [bird update:currentTime];
     [self updateBlocks:currentTime];
     [self updateScore:currentTime];
-}
-
-CGFloat lastVelocity = 0;
-- (void) updateBird:(NSTimeInterval)currentTime
-{
-    if(bird.physicsBody.velocity.dy != lastVelocity){
-        bird.zRotation = M_PI * bird.physicsBody.velocity.dy * 0.0005;
-        lastVelocity = bird.physicsBody.velocity.dy;
-    }
 }
 
 
@@ -299,26 +284,14 @@ CGFloat lastVelocity = 0;
     if(wasted){
         return;
     }
-    
-    [particlesNode setParticleBirthRate:0];
-    [particlesNode setXAcceleration:20];
-    [particlesNode setYAcceleration:0];
+
     wasted = true;
+    [Score registerScore:score];
     NSLog(@"wasted");
     
     if([self.delegate respondsToSelector:@selector(eventWasted)]){
         [self.delegate eventWasted];
     }
     
-}
-
-- (void)didSimulatePhysics {
-    [self enumerateChildNodesWithName:@"bird" usingBlock:^(SKNode *node, BOOL *stop) {
-        
-        
-        if (node.position.y < 0) {
-            [node removeFromParent];
-        }
-    }];
 }
 @end

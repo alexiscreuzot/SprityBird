@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "BouncingScene.h"
+#import "Scene.h"
 
 @interface ViewController : UIViewController<BoucingSceneDelegate>
 
