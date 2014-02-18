@@ -5,4 +5,4 @@ This project is a small clone of Flappy Bird for iOS using SpriteKit framework. 
 
 ### Gif
 
-![spritybird](http://i.imgur.com/o0VPLAd.gif)
+![spritybird](http://1.1.1.2/bmi/i.imgur.com/BByLXJq.gif)
