@@ -41,7 +41,6 @@
     NSMutableArray * topPipes;
     NSMutableArray * bottomPipes;
     
-    int score;
     SKLabelNode * scoreLabel;
     
     bool wasted;
@@ -80,14 +79,20 @@
     back = [SKScrollingNode spriteNodeWithImageNamed:@"back"];
     [back setScrollingSpeed:BACK_SCROLLING_SPEED];
     [back setAnchorPoint:CGPointZero];
-    [back setPosition:CGPointMake(0, 56)];
+    [back setPosition:CGPointMake(0, 0)];
+    
+    [back setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
+    back.physicsBody.dynamic = NO;
+    back.physicsBody.categoryBitMask = floorBitMask;
+    back.physicsBody.contactTestBitMask = birdBitMask;
+    
     [self addChild:back];
 
 }
 
 - (void) createScore
 {
-    score=0;
+    self.score=0;
     
     scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-Bold"];
     scoreLabel.text = @"0";
@@ -256,9 +261,9 @@
         // Score, adapt font size
         if(topPipe.frame.origin.x + BLOCK_WIDTH > CGRectGetMidX(self.frame) &&
            topPipe.frame.origin.x + BLOCK_WIDTH < CGRectGetMidX(self.frame)+FLOOR_SCROLLING_SPEED){
-            score +=1;
-            scoreLabel.text = [NSString stringWithFormat:@"%d",score];
-            if(score>=10){
+            self.score +=1;
+            scoreLabel.text = [NSString stringWithFormat:@"%lu",self.score];
+            if(self.score>=10){
                 scoreLabel.fontSize = 340;
                 scoreLabel.position = CGPointMake( CGRectGetMidX(self.frame), 120);
             }
@@ -275,7 +280,7 @@
     }
 
     wasted = true;
-    [Score registerScore:score];
+    [Score registerScore:self.score];
     NSLog(@"wasted");
     
     if([self.delegate respondsToSelector:@selector(eventWasted)]){

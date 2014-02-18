@@ -16,14 +16,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best : 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aDH-qh-6jw">
-                                        <rect key="frame" x="20" y="542" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="NiZ-lt-7NF">
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="NiZ-lt-7NF" userLabel="getReadyView">
                                         <rect key="frame" x="0.0" y="188" width="320" height="192"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -38,16 +31,53 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="uj7-Pp-F25" userLabel="gameOverView">
+                                        <rect key="frame" x="0.0" y="188" width="320" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_over.png" id="E9M-XD-v6x">
+                                                <rect key="frame" x="30" y="0.0" width="260" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medal_plate.png" id="cqe-Le-Pco">
+                                                <rect key="frame" x="47" y="62" width="226" height="116"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medal_bronze.png" id="M3R-fY-Sp5">
+                                                <rect key="frame" x="73" y="104" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hx9-qP-Lbk">
+                                                <rect key="frame" x="199" y="94" width="50" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.34275350765306123" green="0.19899377777041721" blue="0.18746079285708397" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Czi-Ai-JAO">
+                                                <rect key="frame" x="199" y="135" width="50" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.34275350770000002" green="0.19899377779999999" blue="0.18746079290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="bestScoreLabel" destination="aDH-qh-6jw" id="JLB-ke-EBC"/>
+                        <outlet property="bestScoreLabel" destination="Czi-Ai-JAO" id="Ao2-Im-y2o"/>
+                        <outlet property="currentScore" destination="hx9-qP-Lbk" id="Dqg-jM-hQ6"/>
+                        <outlet property="gameOverView" destination="uj7-Pp-F25" id="bUg-BH-SB4"/>
                         <outlet property="gameView" destination="CH2-gm-LcR" id="qKO-Rq-n79"/>
                         <outlet property="getReadyView" destination="NiZ-lt-7NF" id="AJN-DY-6nS"/>
+                        <outlet property="medalImageView" destination="M3R-fY-Sp5" id="HgQ-jZ-BVo"/>
                         <outlet property="view" destination="kh9-bI-dsS" id="FHi-9B-LmN"/>
                     </connections>
                 </viewController>
@@ -56,7 +86,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="game_over.png" width="198" height="38"/>
         <image name="get_ready.png" width="130" height="40"/>
+        <image name="medal_bronze.png" width="44" height="44"/>
+        <image name="medal_plate.png" width="226" height="116"/>
         <image name="taptap.png" width="120" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

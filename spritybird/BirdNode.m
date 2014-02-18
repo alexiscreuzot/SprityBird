@@ -11,6 +11,11 @@
 #define VERTICAL_SPEED 1
 #define VERTICAL_DELTA 5
 
+@interface BirdNode ()
+@property (strong,nonatomic) SKAction * flap;
+@property (strong,nonatomic) SKAction * flapForever;
+@end
+
 @implementation BirdNode
 
 static CGFloat lastVelocity = 0;
@@ -26,12 +31,14 @@ static bool goingUp = false;
         birdTexture2.filteringMode = SKTextureFilteringNearest;
         SKTexture* birdTexture3 = [SKTexture textureWithImageNamed:@"bird_3"];
         birdTexture2.filteringMode = SKTextureFilteringNearest;
-        
-        SKAction* flap = [SKAction repeatActionForever:[SKAction animateWithTextures:@[birdTexture1, birdTexture2,birdTexture3] timePerFrame:0.2]];
-        
+
         self = [BirdNode spriteNodeWithTexture:birdTexture1];
+        
+        self.flap = [SKAction animateWithTextures:@[birdTexture1, birdTexture2,birdTexture3] timePerFrame:0.2];
+        self.flapForever = [SKAction repeatActionForever:self.flap];
+        
         [self setTexture:birdTexture1];
-        [self runAction:flap];
+        [self runAction:self.flapForever withKey:@"flapForever"];
     }
     return self;
 }
@@ -61,16 +68,20 @@ static bool goingUp = false;
 - (void) startPlaying
 {
     deltaPosY = 0;
-    [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(32, 20)]];
+    [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(26, 18)]];
     self.physicsBody.categoryBitMask = birdBitMask;
     self.physicsBody.restitution = 0.01;
     self.physicsBody.mass = 0.1;
+    
+    [self removeActionForKey:@"flapForever"];
 }
 
 - (void) bounce
 {
     [self.physicsBody setVelocity:CGVectorMake(0, 0)];
     [self.physicsBody applyImpulse:CGVectorMake(0, 40)];
+    
+    [self runAction:self.flap];
 }
 
 @end
