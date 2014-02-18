@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 @property (weak,nonatomic) IBOutlet SKView * gameView;
+@property (weak,nonatomic) IBOutlet UIView * getReadyView;
 @property (weak,nonatomic) IBOutlet UILabel * bestScoreLabel;
 @end
 
@@ -43,12 +44,16 @@
 
 - (void)eventStart
 {
-    
+    [UIView animateWithDuration:.5 animations:^{
+        self.getReadyView.alpha = 1;
+    }];
 }
 
 - (void)eventPlay
 {
-
+    [UIView animateWithDuration:.5 animations:^{
+        self.getReadyView.alpha = 0;
+    }];
 }
 
 - (void)eventWasted

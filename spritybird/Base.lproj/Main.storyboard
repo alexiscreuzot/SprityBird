@@ -23,6 +23,21 @@
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="NiZ-lt-7NF">
+                                        <rect key="frame" x="0.0" y="188" width="320" height="192"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="get_ready.png" id="yG3-Wq-3CO">
+                                                <rect key="frame" x="30" y="0.0" width="260" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taptap.png" id="ha9-c0-ZRk">
+                                                <rect key="frame" x="40" y="62" width="240" height="110"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -32,6 +47,7 @@
                     <connections>
                         <outlet property="bestScoreLabel" destination="aDH-qh-6jw" id="JLB-ke-EBC"/>
                         <outlet property="gameView" destination="CH2-gm-LcR" id="qKO-Rq-n79"/>
+                        <outlet property="getReadyView" destination="NiZ-lt-7NF" id="AJN-DY-6nS"/>
                         <outlet property="view" destination="kh9-bI-dsS" id="FHi-9B-LmN"/>
                     </connections>
                 </viewController>
@@ -39,6 +55,10 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="get_ready.png" width="130" height="40"/>
+        <image name="taptap.png" width="120" height="100"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
