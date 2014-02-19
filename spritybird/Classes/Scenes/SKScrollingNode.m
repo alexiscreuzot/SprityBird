@@ -10,15 +10,16 @@
 
 @implementation SKScrollingNode
 
-+ (id) spriteNodeWithImageNamed:(NSString *)name
+
++ (id) scrollingNodeWithImageNamed:(NSString *)name inContainerWidth:(float) width
 {
     UIImage * image = [UIImage imageNamed:name];
     
-    SKScrollingNode * realNode = [SKScrollingNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(320, image.size.height)];
+    SKScrollingNode * realNode = [SKScrollingNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(width, image.size.height)];
     realNode.scrollingSpeed = 1;
     
     float total = 0;
-    while(total<(320 + image.size.width)){
+    while(total<(width + image.size.width)){
         SKSpriteNode * child = [SKSpriteNode spriteNodeWithImageNamed:name ];
         [child setAnchorPoint:CGPointZero];
         [child setPosition:CGPointMake(total, 0)];

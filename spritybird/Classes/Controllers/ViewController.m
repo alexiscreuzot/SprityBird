@@ -43,7 +43,7 @@
     
     // Present the scene
     self.gameOverView.alpha = 0;
-    self.gameOverView.transform = CGAffineTransformMakeScale(.8, .8);
+    self.gameOverView.transform = CGAffineTransformMakeScale(.9, .9);
     [self.gameView presentScene:scene];
     
 }
@@ -62,11 +62,10 @@
         self.gameOverView.alpha = 0;
         self.gameOverView.transform = CGAffineTransformMakeScale(.8, .8);
         flash.alpha = 0;
+        self.getReadyView.alpha = 1;
     } completion:^(BOOL finished) {
         [flash removeFromSuperview];
-        [UIView animateWithDuration:.5 animations:^{
-            self.getReadyView.alpha = 1;
-        }];
+
     }];
 }
 
@@ -107,8 +106,8 @@
         }
         
         // Set scores
-        self.currentScore.text = F(@"%lu",scene.score);
-        self.bestScoreLabel.text = F(@"%lu",[Score bestScore]);
+        self.currentScore.text = F(@"%li",scene.score);
+        self.bestScoreLabel.text = F(@"%li",(long)[Score bestScore]);
         
     } completion:^(BOOL finished) {
         flash.userInteractionEnabled = NO;

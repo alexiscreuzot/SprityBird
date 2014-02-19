@@ -10,20 +10,20 @@
 
 @implementation Score
 
-+ (void)registerScore:(NSUInteger)score
++ (void)registerScore:(NSInteger)score
 {
     if(score > [Score bestScore]){
         [Score setBestScore:score];
     }
 }
 
-+ (void) setBestScore:(NSUInteger) bestScore
++ (void) setBestScore:(NSInteger) bestScore
 {
     [[NSUserDefaults standardUserDefaults] setInteger:bestScore forKey:kBestScoreKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (NSUInteger) bestScore
++ (NSInteger) bestScore
 {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kBestScoreKey];
 }

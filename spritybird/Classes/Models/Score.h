@@ -10,8 +10,8 @@
 
 @interface Score : NSObject
 
-+ (void) registerScore:(NSUInteger) score;
-+ (void) setBestScore:(NSUInteger) bestScore;
-+ (NSUInteger) bestScore;
++ (void) registerScore:(NSInteger) score;
++ (void) setBestScore:(NSInteger) bestScore;
++ (NSInteger) bestScore;
 
 @end
