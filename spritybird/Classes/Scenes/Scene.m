@@ -6,53 +6,39 @@
 //  Copyright (c) 2013년 Seung Kyun Nam. All rights reserved.
 //
 
-
-
 #import "Scene.h"
-
 #import "SKScrollingNode.h"
-
 #import "BirdNode.h"
 #import "Score.h"
 
-#define FIRST_BLOCK_PADDING 100
-
+#define BACK_SCROLLING_SPEED .5
 #define FLOOR_SCROLLING_SPEED 3
-#define BACK_SCROLLING_SPEED 1
-
 #define FLOOR_HEIGHT 108
-#define VERTICAL_GAP_SIZE 130
 
+// Obstacles
+#define VERTICAL_GAP_SIZE 120
+#define FIRST_BLOCK_PADDING 100
 #define BLOCK_MIN_HEIGHT 52
 #define BLOCK_WIDTH 52
 #define BLOCK_INTERVAL_SPACE 120
 
-#define BLOCK_VARIANCE 180
-
-#define TOP_PIPE_HEIGHT 568
-#define BOTTOM_PIPE_HEIGHT 568
-
 @implementation Scene{
     SKScrollingNode * floor;
     SKScrollingNode * back;
+    SKLabelNode * scoreLabel;
     BirdNode * bird;
     
     int nbObstacles;
     NSMutableArray * topPipes;
     NSMutableArray * bottomPipes;
-    
-    SKLabelNode * scoreLabel;
-    
-    bool wasted;
 }
+
+static bool wasted = NO;
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
         self.physicsWorld.contactDelegate = self;
-        
         [self startGame];
-        
     }
     return self;
 }
@@ -63,6 +49,7 @@
         [self.delegate eventStart];
     }
     
+    // Reinit
     wasted = NO;
     
     [self removeAllChildren];
@@ -74,52 +61,45 @@
     [self createBird];
 }
 
+#pragma mark - Creations
+
 - (void) createBackground
 {
     back = [SKScrollingNode spriteNodeWithImageNamed:@"back"];
     [back setScrollingSpeed:BACK_SCROLLING_SPEED];
     [back setAnchorPoint:CGPointZero];
-    [back setPosition:CGPointMake(0, 0)];
-    
     [back setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame]];
-    back.physicsBody.dynamic = NO;
-    back.physicsBody.categoryBitMask = floorBitMask;
+    back.physicsBody.categoryBitMask = backBitMask;
     back.physicsBody.contactTestBitMask = birdBitMask;
-    
     [self addChild:back];
-
 }
 
 - (void) createScore
 {
-    self.score=0;
-    
+    self.score = 0;
     scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-Bold"];
     scoreLabel.text = @"0";
     scoreLabel.fontSize = 500;
-    scoreLabel.position = CGPointMake( CGRectGetMidX(self.frame), 100);
+    scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 100);
     scoreLabel.alpha = 0.2;
     [self addChild:scoreLabel];
 }
 
 
-- (void)createFloor {
-    // Physic
-    
+- (void)createFloor
+{
     floor = [SKScrollingNode spriteNodeWithImageNamed:@"floor"];
     [floor setScrollingSpeed:FLOOR_SCROLLING_SPEED];
     [floor setAnchorPoint:CGPointZero];
     [floor setName:@"floor"];
     [floor setPhysicsBody:[SKPhysicsBody bodyWithEdgeLoopFromRect:floor.frame]];
-    floor.physicsBody.dynamic = NO;
     floor.physicsBody.categoryBitMask = floorBitMask;
     floor.physicsBody.contactTestBitMask = birdBitMask;
     [self addChild:floor];
 }
 
-- (void)createBird{
-    
-    
+- (void)createBird
+{
     bird = [BirdNode new];
     [bird setPosition:CGPointMake(100, CGRectGetMidY(self.frame))];
     [bird setName:@"bird"];
@@ -128,7 +108,6 @@
 
 - (void) createBlocks
 {
-
     nbObstacles = 3;
     
     CGFloat lastBlockPos = 0;
@@ -146,41 +125,15 @@
         [self addChild:bottomPipe];
         [bottomPipes addObject:bottomPipe];
         
-        
+        // Give some time to the player before first obstacle
         if(0 == i){
             [self place:bottomPipe and:topPipe atX:WIDTH(self)+FIRST_BLOCK_PADDING];
         }else{
             [self place:bottomPipe and:topPipe atX:lastBlockPos + BLOCK_WIDTH+BLOCK_INTERVAL_SPACE];
         }
         lastBlockPos = topPipe.position.x;
-        //NSLog(@"x : %f",lastBlockPos);
     }
-
 }
-
-
-- (void) place:(SKSpriteNode *) bottomPipe and:(SKSpriteNode *) topPipe atX:(float) xPos
-{
-    
-    float availableSpace = HEIGHT(self) - FLOOR_HEIGHT;
-    float maxVariance = availableSpace - (2*BLOCK_MIN_HEIGHT) - VERTICAL_GAP_SIZE;
-    float variance = [Math randomFloatBetween:0 and:maxVariance];
-    
-    float minBottomPosY = FLOOR_HEIGHT + BLOCK_MIN_HEIGHT - HEIGHT(self);
-    float bottomPosY = minBottomPosY + variance;
-    bottomPipe.position = CGPointMake(xPos,bottomPosY);
-    bottomPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, BLOCK_WIDTH, HEIGHT(bottomPipe))];
-    bottomPipe.physicsBody.categoryBitMask = blockBitMask;
-    bottomPipe.physicsBody.contactTestBitMask = birdBitMask;
-
-    topPipe.position = CGPointMake(xPos,bottomPosY + HEIGHT(bottomPipe) + VERTICAL_GAP_SIZE);
-    topPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, BLOCK_WIDTH, HEIGHT(topPipe))];
-
-    topPipe.physicsBody.categoryBitMask = blockBitMask;
-    topPipe.physicsBody.contactTestBitMask = birdBitMask;
-    
-}
-
 
 #pragma mark - Interaction 
 
@@ -188,24 +141,18 @@
     
     if(wasted){
         [self startGame];
-        return;
-    }
-    
-    if (!bird.physicsBody) {
-        
-        [self.view endEditing:YES];
-        
-        if([self.delegate respondsToSelector:@selector(eventPlay)]){
-            [self.delegate eventPlay];
+    }else{
+        if (!bird.physicsBody) {
+            [bird startPlaying];
+            if([self.delegate respondsToSelector:@selector(eventPlay)]){
+                [self.delegate eventPlay];
+            }
         }
-        
-        [bird startPlaying];
+        [bird bounce];
     }
-    
-    [bird bounce];
 }
 
-#pragma mark - Update
+#pragma mark - Update & Core logic
 
 
 - (void)update:(NSTimeInterval)currentTime
@@ -231,7 +178,6 @@
         return;
     }
     
-    
     for(int i=0;i<nbObstacles;i++){
         
         // Get pipes bby pairs
@@ -239,18 +185,40 @@
         SKSpriteNode * bottomPipe = (SKSpriteNode *) bottomPipes[i];
         
         // Check if pair has exited screen, and place them upfront again
-        if (topPipe.position.x < -topPipe.size.width){
+        if (X(topPipe) < -WIDTH(topPipe)){
             SKSpriteNode * mostRightPipe = (SKSpriteNode *) topPipes[(i+(nbObstacles-1))%nbObstacles];
-            [self place:bottomPipe and:topPipe atX:mostRightPipe.position.x+BLOCK_WIDTH+BLOCK_INTERVAL_SPACE];
+            [self place:bottomPipe and:topPipe atX:X(mostRightPipe)+BLOCK_WIDTH+BLOCK_INTERVAL_SPACE];
         }
         
         // Move according to the scrolling speed
-        topPipe.position = CGPointMake(topPipe.position.x - FLOOR_SCROLLING_SPEED, topPipe.position.y);
-        bottomPipe.position = CGPointMake(bottomPipe.position.x - FLOOR_SCROLLING_SPEED, bottomPipe.position.y);
-        
+        topPipe.position = CGPointMake(X(topPipe) - FLOOR_SCROLLING_SPEED, Y(topPipe));
+        bottomPipe.position = CGPointMake(X(bottomPipe) - FLOOR_SCROLLING_SPEED, Y(bottomPipe));
     }
-    
 }
+
+- (void) place:(SKSpriteNode *) bottomPipe and:(SKSpriteNode *) topPipe atX:(float) xPos
+{
+    // Maths
+    float availableSpace = HEIGHT(self) - FLOOR_HEIGHT;
+    float maxVariance = availableSpace - (2*BLOCK_MIN_HEIGHT) - VERTICAL_GAP_SIZE;
+    float variance = [Math randomFloatBetween:0 and:maxVariance];
+    
+    // Bottom pipe placement
+    float minBottomPosY = FLOOR_HEIGHT + BLOCK_MIN_HEIGHT - HEIGHT(self);
+    float bottomPosY = minBottomPosY + variance;
+    bottomPipe.position = CGPointMake(xPos,bottomPosY);
+    bottomPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, BLOCK_WIDTH, HEIGHT(bottomPipe))];
+    bottomPipe.physicsBody.categoryBitMask = blockBitMask;
+    bottomPipe.physicsBody.contactTestBitMask = birdBitMask;
+    
+    // Top pipe placement
+    topPipe.position = CGPointMake(xPos,bottomPosY + HEIGHT(bottomPipe) + VERTICAL_GAP_SIZE);
+    topPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, BLOCK_WIDTH, HEIGHT(topPipe))];
+    
+    topPipe.physicsBody.categoryBitMask = blockBitMask;
+    topPipe.physicsBody.contactTestBitMask = birdBitMask;
+}
+
 
 - (void) updateScore:(NSTimeInterval) currentTime
 {
@@ -259,13 +227,13 @@
         SKSpriteNode * topPipe = (SKSpriteNode *) topPipes[i];
         
         // Score, adapt font size
-        if(topPipe.frame.origin.x + BLOCK_WIDTH > CGRectGetMidX(self.frame) &&
-           topPipe.frame.origin.x + BLOCK_WIDTH < CGRectGetMidX(self.frame)+FLOOR_SCROLLING_SPEED){
+        if(X(topPipe) + BLOCK_WIDTH/2 > bird.position.x &&
+           X(topPipe) + BLOCK_WIDTH/2 < bird.position.x + FLOOR_SCROLLING_SPEED){
             self.score +=1;
             scoreLabel.text = [NSString stringWithFormat:@"%lu",self.score];
             if(self.score>=10){
                 scoreLabel.fontSize = 340;
-                scoreLabel.position = CGPointMake( CGRectGetMidX(self.frame), 120);
+                scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 120);
             }
         }
     }
@@ -275,13 +243,10 @@
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
-    if(wasted){
-        return;
-    }
+    if(wasted){ return; }
 
     wasted = true;
     [Score registerScore:self.score];
-    NSLog(@"wasted");
     
     if([self.delegate respondsToSelector:@selector(eventWasted)]){
         [self.delegate eventWasted];

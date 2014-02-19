@@ -19,12 +19,12 @@
 @property (weak,nonatomic) IBOutlet UILabel * currentScore;
 @property (weak,nonatomic) IBOutlet UILabel * bestScoreLabel;
 
-
 @end
 
 @implementation ViewController
 {
     Scene * scene;
+    UIView * flash;
 }
 
 - (void)viewDidLoad
@@ -41,9 +41,11 @@
     scene.scaleMode = SKSceneScaleModeAspectFill;
     scene.delegate = self;
     
-    // Present the scene.
+    // Present the scene
     self.gameOverView.alpha = 0;
+    self.gameOverView.transform = CGAffineTransformMakeScale(.8, .8);
     [self.gameView presentScene:scene];
+    
 }
 
 
@@ -58,13 +60,14 @@
 {
     [UIView animateWithDuration:.2 animations:^{
         self.gameOverView.alpha = 0;
+        self.gameOverView.transform = CGAffineTransformMakeScale(.8, .8);
+        flash.alpha = 0;
     } completion:^(BOOL finished) {
+        [flash removeFromSuperview];
         [UIView animateWithDuration:.5 animations:^{
             self.getReadyView.alpha = 1;
         }];
     }];
-    
-   
 }
 
 - (void)eventPlay
@@ -76,35 +79,54 @@
 
 - (void)eventWasted
 {
-    UIView * flash = [[UIView alloc] initWithFrame:self.view.frame];
+    flash = [[UIView alloc] initWithFrame:self.view.frame];
     flash.backgroundColor = [UIColor whiteColor];
-    flash.alpha = .8;
-    [self.view.window addSubview:flash];
-    [UIView animateWithDuration:.8 animations:^{
-        flash.alpha = 0;
+    flash.alpha = .9;
+    [self.gameView insertSubview:flash belowSubview:self.getReadyView];
+    
+    [self shakeFrame];
+    
+    [UIView animateWithDuration:.6 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         
+        // Display game over
+        flash.alpha = .4;
         self.gameOverView.alpha = 1;
+        self.gameOverView.transform = CGAffineTransformMakeScale(1, 1);
         
-        if(scene.score >= 10){
-            self.medalImageView.image = [UIImage imageNamed:@"medal_bronze"];
-        }else if (scene.score >= 20){
-            self.medalImageView.image = [UIImage imageNamed:@"medal_silver"];
+        // Set medal
+        if(scene.score >= 40){
+            self.medalImageView.image = [UIImage imageNamed:@"medal_platinum"];
         }else if (scene.score >= 30){
             self.medalImageView.image = [UIImage imageNamed:@"medal_gold"];
-        }else if (scene.score >= 40){
-            self.medalImageView.image = [UIImage imageNamed:@"medal_platinum"];
+        }else if (scene.score >= 20){
+            self.medalImageView.image = [UIImage imageNamed:@"medal_silver"];
+        }else if (scene.score >= 10){
+            self.medalImageView.image = [UIImage imageNamed:@"medal_bronze"];
         }else{
             self.medalImageView.image = nil;
         }
         
+        // Set scores
         self.currentScore.text = F(@"%lu",scene.score);
         self.bestScoreLabel.text = F(@"%lu",[Score bestScore]);
         
     } completion:^(BOOL finished) {
-        [flash removeFromSuperview];
+        flash.userInteractionEnabled = NO;
     }];
     
 }
 
+- (void) shakeFrame
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    [animation setDuration:0.05];
+    [animation setRepeatCount:4];
+    [animation setAutoreverses:YES];
+    [animation setFromValue:[NSValue valueWithCGPoint:
+                             CGPointMake([self.view  center].x - 4.0f, [self.view  center].y)]];
+    [animation setToValue:[NSValue valueWithCGPoint:
+                           CGPointMake([self.view  center].x + 4.0f, [self.view  center].y)]];
+    [[self.view layer] addAnimation:animation forKey:@"position"];
+}
 
 @end

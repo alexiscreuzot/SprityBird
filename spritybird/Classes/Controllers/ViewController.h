@@ -6,10 +6,8 @@
 //  Copyright (c) 2014 Alexis Creuzot. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "Scene.h"
 
-@interface ViewController : UIViewController<BoucingSceneDelegate>
+@interface ViewController : UIViewController<SceneDelegate>
 
 @end

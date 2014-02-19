@@ -6,21 +6,16 @@
 //  Copyright (c) 2013년 Seung Kyun Nam. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
 
-
-
-@protocol BoucingSceneDelegate <NSObject>
-
+@protocol SceneDelegate <NSObject>
 - (void) eventStart;
 - (void) eventPlay;
 - (void) eventWasted;
-
 @end
 
 @interface Scene : SKScene<SKPhysicsContactDelegate>
 
-@property (unsafe_unretained,nonatomic) id<BoucingSceneDelegate> delegate;
+@property (unsafe_unretained,nonatomic) id<SceneDelegate> delegate;
 @property (nonatomic) NSUInteger score;
 
 - (void) startGame;

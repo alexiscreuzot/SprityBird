@@ -11,8 +11,6 @@
 		821A755718AD617800B376D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0A818A6F53400FEBE9B /* ViewController.m */; };
 		821A755818AD617800B376D5 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0C818A6FF4200FEBE9B /* Scene.m */; };
 		821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */; };
-		821A755B18AD617800B376D5 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */; };
-		821A755C18AD617800B376D5 /* UIView+utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A0DE18A79B1900FEBE9B /* UIView+utilities.m */; };
 		821A755D18AD617800B376D5 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = 8274FC2918A7E13200FEBCE7 /* Math.m */; };
 		821A755E18AD618A00B376D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0A418A6F53400FEBE9B /* Main.storyboard */; };
 		821A756818AD618A00B376D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C6A0AA18A6F53400FEBE9B /* Images.xcassets */; };
@@ -102,12 +100,8 @@
 		82C6A0CA18A6FF7400FEBE9B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		82C6A0DA18A7918800FEBE9B /* SKScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKScrollingNode.h; sourceTree = "<group>"; };
 		82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKScrollingNode.m; sourceTree = "<group>"; };
-		82C6A0DD18A79B1900FEBE9B /* UIView+utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+utilities.h"; sourceTree = "<group>"; };
-		82C6A0DE18A79B1900FEBE9B /* UIView+utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+utilities.m"; sourceTree = "<group>"; };
 		82C6A0E018A79B2400FEBE9B /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		82C6A0E118A79B2400FEBE9B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		82C6A0E218A79C3C00FEBE9B /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
-		82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,13 +151,13 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		82B99B4318B1329F0099A4FE /* Model */ = {
+		82B99B4318B1329F0099A4FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				82B99B4418B132B40099A4FE /* Score.h */,
 				82B99B4518B132B40099A4FE /* Score.m */,
 			);
-			name = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		82C6A08618A6F53400FEBE9B = {
@@ -215,7 +209,7 @@
 				82C6A09E18A6F53400FEBE9B /* main.m */,
 				82C6A0A018A6F53400FEBE9B /* spritybird-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		82C6A0B718A6F53400FEBE9B /* spritybird Tests */ = {
@@ -244,12 +238,12 @@
 				82C6A0A218A6F53400FEBE9B /* AppDelegate.m */,
 				82C6A0E018A79B2400FEBE9B /* Macros.h */,
 				82C6A0E118A79B2400FEBE9B /* Constants.h */,
-				82B99B4318B1329F0099A4FE /* Model */,
+				82B99B4318B1329F0099A4FE /* Models */,
 				82C6A0D318A790C000FEBE9B /* Controllers */,
-				82C6A0D418A790C800FEBE9B /* Scene */,
+				82C6A0D418A790C800FEBE9B /* Scenes */,
 				82C6A0D718A790FE00FEBE9B /* Helpers */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		82C6A0D318A790C000FEBE9B /* Controllers */ = {
@@ -258,17 +252,17 @@
 				82C6A0A718A6F53400FEBE9B /* ViewController.h */,
 				82C6A0A818A6F53400FEBE9B /* ViewController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		82C6A0D418A790C800FEBE9B /* Scene */ = {
+		82C6A0D418A790C800FEBE9B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				82C6A0C718A6FF4200FEBE9B /* Scene.h */,
 				82C6A0C818A6FF4200FEBE9B /* Scene.m */,
 				82C6A0D518A790E100FEBE9B /* Nodes */,
 			);
-			name = Scene;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		82C6A0D518A790E100FEBE9B /* Nodes */ = {
@@ -285,14 +279,10 @@
 		82C6A0D718A790FE00FEBE9B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				82C6A0E218A79C3C00FEBE9B /* UIColor+FlatUI.h */,
-				82C6A0E318A79C3C00FEBE9B /* UIColor+FlatUI.m */,
-				82C6A0DD18A79B1900FEBE9B /* UIView+utilities.h */,
-				82C6A0DE18A79B1900FEBE9B /* UIView+utilities.m */,
 				8274FC2818A7E13200FEBCE7 /* Math.h */,
 				8274FC2918A7E13200FEBCE7 /* Math.m */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		82C6A0D918A7913200FEBE9B /* Resources */ = {
@@ -302,7 +292,7 @@
 				8274FC3318A7F14000FEBCE7 /* Images */,
 				82C6A0AA18A6F53400FEBE9B /* Images.xcassets */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,9 +412,7 @@
 				821A755818AD617800B376D5 /* Scene.m in Sources */,
 				821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */,
 				82B99B4618B132B40099A4FE /* Score.m in Sources */,
-				821A755B18AD617800B376D5 /* UIColor+FlatUI.m in Sources */,
 				82B99B4218B1301F0099A4FE /* BirdNode.m in Sources */,
-				821A755C18AD617800B376D5 /* UIView+utilities.m in Sources */,
 				821A755D18AD617800B376D5 /* Math.m in Sources */,
 				821A755618AD616C00B376D5 /* AppDelegate.m in Sources */,
 			);
@@ -554,8 +542,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
-				INFOPLIST_FILE = "spritybird/spritybird-Info.plist";
+				GCC_PREFIX_HEADER = "spritybird/Supporting Files/spritybird-Prefix.pch";
+				INFOPLIST_FILE = "spritybird/Supporting Files/spritybird-Info.plist";
 				PRODUCT_NAME = spritybird;
 				WRAPPER_EXTENSION = app;
 			};
@@ -567,8 +555,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
-				INFOPLIST_FILE = "spritybird/spritybird-Info.plist";
+				GCC_PREFIX_HEADER = "spritybird/Supporting Files/spritybird-Prefix.pch";
+				INFOPLIST_FILE = "spritybird/Supporting Files/spritybird-Info.plist";
 				PRODUCT_NAME = spritybird;
 				WRAPPER_EXTENSION = app;
 			};

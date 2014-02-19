@@ -13,10 +13,7 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-
 #import <SpriteKit/SpriteKit.h>
-#import "UIColor+FlatUI.h"
-#import "UIView+utilities.h"
 
 #import "Constants.h"
 #import "Math.h"

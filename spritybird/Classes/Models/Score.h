@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Alexis Creuzot. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #define kBestScoreKey @"BestScore"
 
 @interface Score : NSObject
