@@ -11,7 +11,6 @@
 #import "Score.h"
 
 @interface ViewController ()
-@property (weak,nonatomic) IBOutlet SKView * gameView;
 @property (weak,nonatomic) IBOutlet UIView * getReadyView;
 
 @property (weak,nonatomic) IBOutlet UIView * gameOverView;
@@ -37,15 +36,15 @@
     //self.gameView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    scene = [Scene sceneWithSize:self.gameView.bounds.size];
+    scene = [Scene sceneWithSize:self.view.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     scene.delegate = self;
     
     // Present the scene
     self.gameOverView.alpha = 0;
     self.gameOverView.transform = CGAffineTransformMakeScale(.9, .9);
-    [self.gameView presentScene:scene];
     
+    [(SKView *)self.view presentScene:scene];
 }
 
 
@@ -81,7 +80,7 @@
     flash = [[UIView alloc] initWithFrame:self.view.frame];
     flash.backgroundColor = [UIColor whiteColor];
     flash.alpha = .9;
-    [self.gameView insertSubview:flash belowSubview:self.getReadyView];
+    [self.view insertSubview:flash belowSubview:self.getReadyView];
     
     [self shakeFrame];
     
