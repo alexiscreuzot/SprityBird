@@ -1,3 +1,6 @@
+You can access the Swift version of this project here : https://github.com/fsiu/SprityBirdInSwift
+
+==========
 SprityBird
 ==========
 
