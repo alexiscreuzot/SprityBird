@@ -31,7 +31,7 @@ static bool goingUp = false;
         SKTexture* birdTexture2 = [SKTexture textureWithImageNamed:@"bird_2"];
         birdTexture2.filteringMode = SKTextureFilteringNearest;
         SKTexture* birdTexture3 = [SKTexture textureWithImageNamed:@"bird_3"];
-        birdTexture2.filteringMode = SKTextureFilteringNearest;
+        birdTexture3.filteringMode = SKTextureFilteringNearest;
 
         self = [BirdNode spriteNodeWithTexture:birdTexture1];
         
