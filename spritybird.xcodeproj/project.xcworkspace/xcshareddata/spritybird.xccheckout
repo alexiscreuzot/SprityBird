@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>9700BFD8-6B1F-47D6-833E-1038F010892E</string>
+	<string>5E281098-DA4A-43B1-9CFF-FE2472DB7B3A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>spritybird</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>054AFBEE-CCFE-4151-ACAE-325E7B72BB50</key>
-		<string>ssh://github.com/kirualex/SprityBird.git</string>
+		<key>90F1F1FD-3D0F-4E0B-84D1-22F24AD41DEE</key>
+		<string>https://github.com/samapal/SprityBird.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>spritybird.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>054AFBEE-CCFE-4151-ACAE-325E7B72BB50</key>
+		<key>90F1F1FD-3D0F-4E0B-84D1-22F24AD41DEE</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/kirualex/SprityBird.git</string>
+	<string>https://github.com/samapal/SprityBird.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>054AFBEE-CCFE-4151-ACAE-325E7B72BB50</string>
+	<string>90F1F1FD-3D0F-4E0B-84D1-22F24AD41DEE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>054AFBEE-CCFE-4151-ACAE-325E7B72BB50</string>
+			<string>90F1F1FD-3D0F-4E0B-84D1-22F24AD41DEE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SprityBird</string>
 		</dict>
